@@ -19,9 +19,6 @@ CGFloat const kBurgerButtonWidth = 50.0;
 CGFloat const kBurgerButtonHeight = 50.0;
 //NSString const *kAccessTokenKey = @"";
 
-
-
-
 @interface BurgerMenuViewController ()<UITableViewDelegate>
 
 @property (strong, nonatomic) UIViewController *topViewController;
