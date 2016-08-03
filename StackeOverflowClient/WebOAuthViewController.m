@@ -15,9 +15,6 @@ NSString const *kRedirectURI = @"https://stackexchange.com/oauth/login_success";
 NSString const *kClientID = @"7592";
 //NSString const *kAccessTokenKey = @"";
 
-
-
-
 @interface WebOAuthViewController () <WKNavigationDelegate>
 
 @end
@@ -52,7 +49,6 @@ NSString const *kClientID = @"7592";
         [defaults setObject:token forKey:@"token"];
         [defaults synchronize];
         
-        
         //
 //        NSData *secret = [token dataUsingEncoding:NSUTF8StringEncoding];
         
@@ -61,13 +57,9 @@ NSString const *kClientID = @"7592";
 //                                (id)kSecAttrService: @"StackOverflowClient",
 //                                (id)kSecValueData: secret
 //                                };
-//        
-        
-        
+//
         [self dismissViewControllerAnimated:YES completion:nil];
-        
-        
-        
+    
     }
     
     decisionHandler(WKNavigationActionPolicyAllow);

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4C0671121D4FAD380018901A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0671111D4FAD380018901A /* main.m */; };
 		4C0671151D4FAD380018901A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0671141D4FAD380018901A /* AppDelegate.m */; };
-		4C0671181D4FAD380018901A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0671171D4FAD380018901A /* ViewController.m */; };
 		4C06711B1D4FAD380018901A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0671191D4FAD380018901A /* Main.storyboard */; };
 		4C06711D1D4FAD380018901A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C06711C1D4FAD380018901A /* Assets.xcassets */; };
 		4C0671201D4FAD380018901A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C06711E1D4FAD380018901A /* LaunchScreen.storyboard */; };
@@ -17,15 +16,33 @@
 		4C06712C1D4FBA0A0018901A /* QuestionSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C06712B1D4FBA0A0018901A /* QuestionSearchViewController.m */; };
 		4C06712F1D4FBA190018901A /* UserQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C06712E1D4FBA190018901A /* UserQuestionsViewController.m */; };
 		4C0671321D4FD34F0018901A /* WebOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0671311D4FD34F0018901A /* WebOAuthViewController.m */; };
+		4C0671341D5104A10018901A /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0671331D5104A10018901A /* AFNetworking.framework */; };
+		4C0671361D5105310018901A /* AFNetworking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C0671331D5104A10018901A /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4C0671391D510B430018901A /* StackOverflowService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0671381D510B430018901A /* StackOverflowService.m */; };
+		4C06713D1D510BEB0018901A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C06713C1D510BEB0018901A /* ViewController.m */; };
+		4C0671401D511A8F0018901A /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C06713F1D511A8F0018901A /* Question.m */; };
+		4C0671441D511AE70018901A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0671431D511AE70018901A /* User.m */; };
+		4C0671471D511EB10018901A /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0671461D511EB10018901A /* JSONParser.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4C0671351D5105160018901A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4C0671361D5105310018901A /* AFNetworking.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4C06710D1D4FAD380018901A /* StackeOverflowClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackeOverflowClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0671111D4FAD380018901A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4C0671131D4FAD380018901A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C0671141D4FAD380018901A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4C0671161D4FAD380018901A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4C0671171D4FAD380018901A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4C06711A1D4FAD380018901A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C06711C1D4FAD380018901A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C06711F1D4FAD380018901A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +55,17 @@
 		4C06712E1D4FBA190018901A /* UserQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserQuestionsViewController.m; sourceTree = "<group>"; };
 		4C0671301D4FD34F0018901A /* WebOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebOAuthViewController.h; sourceTree = "<group>"; };
 		4C0671311D4FD34F0018901A /* WebOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebOAuthViewController.m; sourceTree = "<group>"; };
+		4C0671331D5104A10018901A /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
+		4C0671371D510B430018901A /* StackOverflowService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackOverflowService.h; sourceTree = "<group>"; };
+		4C0671381D510B430018901A /* StackOverflowService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackOverflowService.m; sourceTree = "<group>"; };
+		4C06713B1D510BEB0018901A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4C06713C1D510BEB0018901A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4C06713E1D511A8F0018901A /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		4C06713F1D511A8F0018901A /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		4C0671421D511AE70018901A /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		4C0671431D511AE70018901A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		4C0671451D511EB10018901A /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
+		4C0671461D511EB10018901A /* JSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C0671341D5104A10018901A /* AFNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +85,7 @@
 			children = (
 				4C06710F1D4FAD380018901A /* StackeOverflowClient */,
 				4C06710E1D4FAD380018901A /* Products */,
+				4C0671331D5104A10018901A /* AFNetworking.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,23 +100,18 @@
 		4C06710F1D4FAD380018901A /* StackeOverflowClient */ = {
 			isa = PBXGroup;
 			children = (
-				4C0671131D4FAD380018901A /* AppDelegate.h */,
-				4C0671141D4FAD380018901A /* AppDelegate.m */,
-				4C0671161D4FAD380018901A /* ViewController.h */,
-				4C0671171D4FAD380018901A /* ViewController.m */,
+				4C0671411D511A9D0018901A /* Model */,
 				4C0671191D4FAD380018901A /* Main.storyboard */,
+				4C06713B1D510BEB0018901A /* ViewController.h */,
+				4C06713C1D510BEB0018901A /* ViewController.m */,
 				4C06711C1D4FAD380018901A /* Assets.xcassets */,
 				4C06711E1D4FAD380018901A /* LaunchScreen.storyboard */,
 				4C0671211D4FAD380018901A /* Info.plist */,
 				4C0671101D4FAD380018901A /* Supporting Files */,
-				4C0671271D4FAD620018901A /* BurgerMenuViewController.h */,
-				4C0671281D4FAD620018901A /* BurgerMenuViewController.m */,
-				4C06712A1D4FBA0A0018901A /* QuestionSearchViewController.h */,
-				4C06712B1D4FBA0A0018901A /* QuestionSearchViewController.m */,
-				4C06712D1D4FBA190018901A /* UserQuestionsViewController.h */,
-				4C06712E1D4FBA190018901A /* UserQuestionsViewController.m */,
+				4C06713A1D510B800018901A /* Controller */,
 				4C0671301D4FD34F0018901A /* WebOAuthViewController.h */,
 				4C0671311D4FD34F0018901A /* WebOAuthViewController.m */,
+				4C0671481D511EC10018901A /* Utilities */,
 			);
 			path = StackeOverflowClient;
 			sourceTree = "<group>";
@@ -99,6 +124,51 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4C06713A1D510B800018901A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4C0671271D4FAD620018901A /* BurgerMenuViewController.h */,
+				4C0671281D4FAD620018901A /* BurgerMenuViewController.m */,
+				4C06712A1D4FBA0A0018901A /* QuestionSearchViewController.h */,
+				4C06712B1D4FBA0A0018901A /* QuestionSearchViewController.m */,
+				4C06712D1D4FBA190018901A /* UserQuestionsViewController.h */,
+				4C06712E1D4FBA190018901A /* UserQuestionsViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4C0671411D511A9D0018901A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C06713E1D511A8F0018901A /* Question.h */,
+				4C06713F1D511A8F0018901A /* Question.m */,
+				4C0671421D511AE70018901A /* User.h */,
+				4C0671431D511AE70018901A /* User.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4C0671481D511EC10018901A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4C0671371D510B430018901A /* StackOverflowService.h */,
+				4C0671381D510B430018901A /* StackOverflowService.m */,
+				4C0671451D511EB10018901A /* JSONParser.h */,
+				4C0671461D511EB10018901A /* JSONParser.m */,
+				4C0671491D511EDA0018901A /* App Global */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		4C0671491D511EDA0018901A /* App Global */ = {
+			isa = PBXGroup;
+			children = (
+				4C0671131D4FAD380018901A /* AppDelegate.h */,
+				4C0671141D4FAD380018901A /* AppDelegate.m */,
+			);
+			name = "App Global";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,6 +179,7 @@
 				4C0671091D4FAD380018901A /* Sources */,
 				4C06710A1D4FAD380018901A /* Frameworks */,
 				4C06710B1D4FAD380018901A /* Resources */,
+				4C0671351D5105160018901A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -169,11 +240,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C0671441D511AE70018901A /* User.m in Sources */,
 				4C0671321D4FD34F0018901A /* WebOAuthViewController.m in Sources */,
 				4C0671291D4FAD620018901A /* BurgerMenuViewController.m in Sources */,
+				4C06713D1D510BEB0018901A /* ViewController.m in Sources */,
 				4C06712F1D4FBA190018901A /* UserQuestionsViewController.m in Sources */,
-				4C0671181D4FAD380018901A /* ViewController.m in Sources */,
+				4C0671391D510B430018901A /* StackOverflowService.m in Sources */,
+				4C0671471D511EB10018901A /* JSONParser.m in Sources */,
 				4C0671151D4FAD380018901A /* AppDelegate.m in Sources */,
+				4C0671401D511A8F0018901A /* Question.m in Sources */,
 				4C06712C1D4FBA0A0018901A /* QuestionSearchViewController.m in Sources */,
 				4C0671121D4FAD380018901A /* main.m in Sources */,
 			);
@@ -289,6 +364,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StackeOverflowClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sweeney.StackeOverflowClient;
@@ -300,6 +379,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StackeOverflowClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sweeney.StackeOverflowClient;

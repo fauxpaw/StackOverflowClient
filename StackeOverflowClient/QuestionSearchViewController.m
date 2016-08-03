@@ -7,8 +7,13 @@
 //
 
 #import "QuestionSearchViewController.h"
+#import "StackOverflowService.h"
+#import "Question.h"
 
-@interface QuestionSearchViewController ()
+@interface QuestionSearchViewController () <UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *searchedQuestions;
 
 @end
 
@@ -16,22 +21,52 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+    self.tableView.dataSource = self;
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSString *token = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+
+    if (token) {
+        
+        [StackOverflowService questionsForSearchTerm:@"iOS" completionHandler:^(NSArray *results, NSError *error) {
+            
+            if (error) {
+                NSLog(@"%@", error.localizedDescription);
+                return;
+            }
+            
+            self.searchedQuestions = results;
+            [self.tableView reloadData];
+        
+        }];
+        
+    }
+    
+    
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - TableViewDataSource
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+  
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuestionCell" forIndexPath:indexPath];
+    
+    Question *currentQuesion = self.searchedQuestions[indexPath.row];
+    cell.textLabel.text = currentQuesion.title;
+    
+    return cell;
+    
 }
-*/
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return self.searchedQuestions.count;
+    
+}
 
 @end
