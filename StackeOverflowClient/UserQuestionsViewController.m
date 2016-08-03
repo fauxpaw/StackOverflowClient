@@ -7,8 +7,14 @@
 //
 
 #import "UserQuestionsViewController.h"
+#import "StackOverflowService.h"
+#import "User.h"
 
-@interface UserQuestionsViewController ()
+@interface UserQuestionsViewController ()<UITableViewDataSource, UISearchBarDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) NSArray *searchedArray;
 
 @end
 
@@ -16,22 +22,64 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.searchBar.delegate = self;
+    self.tableView.dataSource = self;
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    _searchBar.placeholder = @"Enter a name";
+    
+   }
+
+#pragma mark - TableViewDataSource
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UsersCell" forIndexPath:self.searchedArray[indexPath.row]];
+    
+    User *user = self.searchedArray[indexPath.row];
+    cell.textLabel.text = user.username;
+    
+    return cell;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return self.searchedArray.count;
 }
-*/
+
+#pragma mark - SearchBarDelegate
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    
+    NSString *searchText = searchBar.text;
+    NSString *token = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+    
+    if (token) {
+        
+        [StackOverflowService usersForSearchTerm:searchText completionHandler:^(NSArray *results, NSError *error) {
+            
+            if (!error) {
+                
+                NSLog(@"why no work? Plz work. Work naow!");
+                
+                self.searchedArray = results;
+//                NSLog(@"%@", _searchedArray);
+                
+                [self.tableView reloadData];
+                
+            } else {
+                NSLog(@"%@", error.localizedDescription);
+            }
+
+        }];
+        
+    }
+}
 
 @end

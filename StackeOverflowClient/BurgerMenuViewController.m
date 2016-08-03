@@ -46,7 +46,6 @@ CGFloat const kBurgerButtonHeight = 50.0;
     [self setupChildController:questionSearchVC];
     
     self.topViewController = questionSearchVC;
-    
     [self setupBurgerButton];
     [self setupPanGesture];
     
